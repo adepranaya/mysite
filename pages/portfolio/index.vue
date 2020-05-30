@@ -8,10 +8,10 @@
               <nuxt-link to="/" class="text-gray-900 hover:text-teal-800">home</nuxt-link>
             </li>
             <li class="mr-6">
-              <nuxt-link to="/about" class="text-cyan-400 font-bold">about me</nuxt-link>
+              <nuxt-link to="/about" class="text-gray-900 hover:text-teal-800">about me</nuxt-link>
             </li>
             <li class="mr-6">
-              <nuxt-link to="/portfolio" class="text-gray-900 hover:text-teal-800">portfolio</nuxt-link>
+              <nuxt-link to="/portfolio" class="text-cyan-400 font-bold">portfolio</nuxt-link>
             </li>
             <li class="mr-6 hidden">
               <a class="text-gray-900 hover:text-teal-800" href="#">skills</a>
@@ -27,9 +27,7 @@
         <div class="h-full flex items-center">
           <div class="flex justify-center md:justify-between w-full relative p-10 md:p-0">
             <div class="w-auto self-center md:px-10 lg:px-20 relative z-10">
-              <p>
-                My name is Ade Pranaya, i graduated from pasundan university. I am very happy with programming, my last job was to create web programs such as forums on e-learning and point of sales at digital agencies. Besides, I actually also like to make designs such as logos, icons, UI UX applications.
-              </p>
+                <h1 class="font-bold">Comming soon</h1>
             </div>
           </div>
         </div>
@@ -70,5 +68,4 @@ export default {
 </script>
 
 <style>
-
 </style>
