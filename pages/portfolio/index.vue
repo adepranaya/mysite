@@ -1,49 +1,31 @@
 <template>
-  <div class="tracking-widest flex justify-center bg-cyan-400">
-    <div class="min-400 h-screen w-screen max-w-screen-xl relative bg-white shadow-lg">
-      <div class="py-6 w-full inline-block h-full absolute z-1">
-        <nav class="hidden md:inline-block mx-10 lg:mx-20">
-          <ul class="flex uppercase">
-            <li class="mr-6">
-              <nuxt-link to="/" class="text-gray-900 hover:text-teal-800">home</nuxt-link>
-            </li>
-            <li class="mr-6">
-              <nuxt-link to="/about" class="text-gray-900 hover:text-teal-800">about me</nuxt-link>
-            </li>
-            <li class="mr-6">
-              <nuxt-link to="/portfolio" class="text-cyan-400 font-bold">portfolio</nuxt-link>
-            </li>
-            <li class="mr-6 hidden">
-              <a class="text-gray-900 hover:text-teal-800" href="#">skills</a>
-            </li>
-            <li class="mr-6">
-              <a
-                class="text-gray-900 hover:text-teal-800"
-                href="mailto:adepranaya@gmail.com?subject=I want hire you!&body=Hello Ade!, my name is ..."
-              >contact</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="h-full flex items-center">
-          <div class="flex justify-center md:justify-between w-full relative p-10 md:p-0">
-            <div class="w-auto self-center md:px-10 lg:px-20 relative z-10">
-                <h1 class="font-bold">Comming soon</h1>
-            </div>
-          </div>
-        </div>
-        <div class="absolute z-1 bottom-0 py-1 px-10 lg:px-20 w-full">
-          <div class="mt-4 flex items-center mb-4">
-            <a href="https://instagram.com/depran7" target="_blank" class="mr-5">
-              <img src="~/assets/img/instagram_icon.svg" alt class="h-10" />
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UCNEqtGZAM-LiBeSATMrOvVQ?sub_confirmation=1"
-              target="_blank"
-              class="mr-5"
-            >
-              <img src="~/assets/img/youtube_icon.svg" alt class="h-10" />
-            </a>
-            <span>copyright &copy; {{currentDate}}. {{name}}</span>
+  <div class="h-full flex items-center">
+    <div class="w-full relative px-10 md:p-0 lg:grid grid-cols-2">
+      <div class="self-center md:px-10 lg:px-20 relative z-10">
+        <h1 class="text-4xl md:text-6xl font-bold lg:-my-3">
+          Portfolio
+        </h1>
+        <div class="grid grid-cols-1 gap-4 mt-6 h-64  overflow-auto">
+          <div
+            class="p-4 border border-l-4 border-gray-400 bg-white"
+            v-for="(el, index) in portfolios"
+            :key="index"
+          >
+            <h2 class="font-bold text-xl">{{ el.sebagai }}</h2>
+            <p class="text-gray-600">{{ el.tanggal }}</p>
+            <ul v-if="typeof el.deskripsi === 'object'" class="list-disc ml-4">
+              <li v-for="(desc, iD) in el.deskripsi" :key="iD" class="mb-2">{{ desc }}</li>
+            </ul>
+            <p v-else>{{ el.deskripsi }}</p>
+            <ul>
+              <li
+                v-for="(tech, iT) in el.teknologi"
+                :key="iT"
+                class="inline-block bg-cyan-400 text-white mr-4 mt-4 p-1 rounded text-sm"
+              >
+                {{ tech }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -52,20 +34,56 @@
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
-
 export default {
-  components: {
-    Logo
-  },
-  data() {
+  data: () => {
     return {
-      currentDate: new Date().getFullYear().toString(),
-      name: "Ade Pranaya"
+      portfolios: [
+        {
+          sebagai: "Frontend Developer",
+          deskripsi: "PT Kunci Teknologi Digital, Bandung",
+          teknologi: ["Vue JS", "Nuxt JS"],
+          tanggal: "2019 - now"
+        },
+        {
+          sebagai: "Mentor Private Class",
+          deskripsi: "Web Development",
+          teknologi: ["PHP"],
+          tanggal: "2020 - now"
+        },
+        {
+          sebagai: "Freelance web developer",
+          deskripsi: [
+            "Create Forum Discussion at https://webprogrammingunpas.com",
+            "Create slip list customer at PT Pertamina",
+            "Create Desktop Point of Sales at Anaheim",
+            "Create skin clinic at Naifah",
+            "Create 'Sistem Informasi Data Kepegawaian (SIDAKEP) Dinkes Jabar'",
+          ],
+          teknologi: ["Laravel", "React JS", "Electron"],
+          tanggal: "2018 - now"
+        },
+        {
+          sebagai: "Co – Trainer Workshop Professional Web Programming",
+          deskripsi: "Create Website using Bootstrap 4.0 and CodeIgniter",
+          teknologi: ["Bootstrap 4.0", "CodeIgniter 2"],
+          tanggal: "2019"
+        },
+        {
+          sebagai: "Frontend Developer",
+          deskripsi: "Magang di PT Titik Terang Teknologi, Bandung",
+          teknologi: ["Laravel"],
+          tanggal: "2018"
+        },
+        {
+          sebagai: "Informatic Laboratory Asistant",
+          deskripsi: "Guide a students at Research Group Programming and Logic at Pasundan University",
+          teknologi: [],
+          tanggal: "2016 – 2019"
+        }
+      ]
     };
   }
 };
 </script>
 
-<style>
-</style>
+<style></style>
