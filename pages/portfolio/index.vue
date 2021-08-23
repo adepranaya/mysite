@@ -2,6 +2,7 @@
   <div class="h-full flex items-center">
     <div class="w-full relative px-10 md:p-0 lg:grid grid-cols-2">
       <div class="self-center md:px-10 lg:px-20 relative z-10">
+        <back-button></back-button>
         <h1 class="text-4xl md:text-6xl font-bold lg:-my-3">
           Portfolio
         </h1>
@@ -36,7 +37,10 @@
 </template>
 
 <script>
-export default {
+import BackButton from "~/components/BackButton";
+export default {components: {
+    BackButton
+  },
   data: () => {
     return {
       portfolios: [
@@ -72,7 +76,7 @@ export default {
         },
         {
           sebagai: "Frontend Developer",
-          deskripsi: "Magang di PT Titik Terang Teknologi, Bandung",
+          deskripsi: "Internship at PT Titik Terang Teknologi, Bandung",
           teknologi: ["Laravel"],
           tanggal: "2018"
         },
