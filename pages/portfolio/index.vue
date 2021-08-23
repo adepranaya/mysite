@@ -14,7 +14,9 @@
             <h2 class="font-bold text-xl">{{ el.sebagai }}</h2>
             <p class="text-gray-600">{{ el.tanggal }}</p>
             <ul v-if="typeof el.deskripsi === 'object'" class="list-disc ml-4">
-              <li v-for="(desc, iD) in el.deskripsi" :key="iD" class="mb-2">{{ desc }}</li>
+              <li v-for="(desc, iD) in el.deskripsi" :key="iD" class="mb-2">
+                {{ desc }}
+              </li>
             </ul>
             <p v-else>{{ el.deskripsi }}</p>
             <ul>
@@ -57,7 +59,7 @@ export default {
             "Create slip list customer at PT Pertamina",
             "Create Desktop Point of Sales at Anaheim",
             "Create skin clinic at Naifah",
-            "Create 'Sistem Informasi Data Kepegawaian (SIDAKEP) Dinkes Jabar'",
+            "Create 'Sistem Informasi Data Kepegawaian (SIDAKEP) Dinkes Jabar'"
           ],
           teknologi: ["Laravel", "React JS", "Electron"],
           tanggal: "2018 - now"
@@ -76,7 +78,8 @@ export default {
         },
         {
           sebagai: "Informatic Laboratory Asistant",
-          deskripsi: "Guide a students at Research Group Programming and Logic at Pasundan University",
+          deskripsi:
+            "Guide a students at Research Group Programming and Logic at Pasundan University",
           teknologi: [],
           tanggal: "2016 – 2019"
         }
