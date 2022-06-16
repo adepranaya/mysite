@@ -48,7 +48,7 @@ export default {components: {
       portfolios: [
         {
           sebagai: "Specified input file /src/inpus.css does not exist.",
-          deskripsi: "Getting error when i trying Start the Tailwind CLI build process like the <a href='https://tailwindcss.com/docs/installation' class='text-cyan-100'>docs</a> , <pre class='whitespace-pre-wrap'>npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch</pre> <br> so the solution is jsut remove first slash from the path like this <pre class='whitespace-pre-wrap'>npx tailwindcss -i src/inpus.css -o dist/output.css --watch</pre>",
+          deskripsi: "Getting error when i trying Start the Tailwind CLI build process like the <a href='https://tailwindcss.com/docs/installation' class='text-cyan-100'>docs</a> , <pre class='whitespace-pre-wrap'>npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch</pre> <br> so the solution is just remove the first slash from the path like this <pre class='whitespace-pre-wrap'>npx tailwindcss -i src/inpus.css -o dist/output.css --watch</pre>",
           teknologi: ["Tailwind CSS v3.1.2"],
           tanggal: "15 Juni 2022"
         },
