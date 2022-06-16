@@ -1,7 +1,7 @@
 <template>
   <div class="tracking-widest flex justify-center bg-gray-400">
     <div
-      class="min-400 h-screen w-screen max-w-screen-xl relative bg-white shadow-lg"
+      class="min-400 min-h-screen w-screen max-w-screen-xl relative bg-white shadow-lg"
     >
       <img
         src="~/assets/img/ellipse.svg"
@@ -26,6 +26,13 @@
                 to="/portfolio"
                 class="text-gray-900 hover:text-teal-800"
                 >portfolio</nuxt-link
+              >
+            </li>
+            <li class="mr-6">
+              <nuxt-link
+                to="/notes"
+                class="text-gray-900 hover:text-teal-800"
+                >notes</nuxt-link
               >
             </li>
             <li class="mr-6 hidden">

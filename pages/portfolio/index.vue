@@ -1,34 +1,36 @@
 <template>
-  <div class="h-full flex items-center">
-    <div class="w-full relative px-10 md:p-0 lg:grid grid-cols-2">
-      <div class="self-center md:px-10 lg:px-20 relative z-10">
+  <div class="h-full flex ">
+    <div class="w-full relative px-10 md:p-0">
+      <div class="flex flex-col overflow-auto md:px-10 lg:px-20 relative z-10 min-h-full">
         <back-button></back-button>
         <h1 class="text-4xl md:text-6xl font-bold lg:-my-3">
           Portfolio
         </h1>
-        <div class="grid grid-cols-1 gap-4 mt-6 h-64  overflow-auto">
-          <div
-            class="p-4 border border-l-4 border-gray-400 bg-white"
-            v-for="(el, index) in portfolios"
-            :key="index"
-          >
-            <h2 class="font-bold text-xl">{{ el.sebagai }}</h2>
-            <p class="text-gray-600">{{ el.tanggal }}</p>
-            <ul v-if="typeof el.deskripsi === 'object'" class="list-disc ml-4">
-              <li v-for="(desc, iD) in el.deskripsi" :key="iD" class="mb-2">
-                {{ desc }}
-              </li>
-            </ul>
-            <p v-else>{{ el.deskripsi }}</p>
-            <ul>
-              <li
-                v-for="(tech, iT) in el.teknologi"
-                :key="iT"
-                class="inline-block bg-cyan-400 text-white mr-4 mt-4 p-1 rounded text-sm"
-              >
-                {{ tech }}
-              </li>
-            </ul>
+        <div class="overflow-auto flex-1  max-h-full">
+          <div class="grid grid-cols-1 gap-4 mt-6">
+            <div
+              class="p-4 border border-l-4 border-gray-400 bg-white"
+              v-for="(el, index) in portfolios"
+              :key="index"
+            >
+              <h2 class="font-bold text-xl">{{ el.sebagai }}</h2>
+              <p class="text-gray-600">{{ el.tanggal }}</p>
+              <ul v-if="typeof el.deskripsi === 'object'" class="list-disc ml-4">
+                <li v-for="(desc, iD) in el.deskripsi" :key="iD" class="mb-2">
+                  {{ desc }}
+                </li>
+              </ul>
+              <p v-else>{{ el.deskripsi }}</p>
+              <ul>
+                <li
+                  v-for="(tech, iT) in el.teknologi"
+                  :key="iT"
+                  class="inline-block bg-cyan-400 text-white mr-4 mt-4 p-1 rounded text-sm"
+                >
+                  {{ tech }}
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
